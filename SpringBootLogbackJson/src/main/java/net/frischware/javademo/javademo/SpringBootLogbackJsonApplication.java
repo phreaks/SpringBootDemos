@@ -1,4 +1,4 @@
-package com.example.demo;
+package net.frischware.javademo.javademo;
 
 import static net.logstash.logback.argument.StructuredArguments.keyValue;
 

@@ -1,4 +1,4 @@
-package com.example.demo;
+package net.frischware.javademo.javademo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
