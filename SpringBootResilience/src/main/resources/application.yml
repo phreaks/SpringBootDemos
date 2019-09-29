@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application.name: springbootdemo
+
+management.endpoints.web.exposure.include: '*'
+management.endpoint.health.show-details: always
+
+
+management.metrics.tags.application: ${spring.application.name}
+management.metrics.distribution.percentiles-histogram.http.server.requests: true
+management.metrics.distribution.percentiles-histogram.resilience4j.circuitbreaker.calls: true
+
+
+resilience4j.retry:
+  configs:
+    default:
+      maxRetryAttempts: 2
+      waitDuration: 6s
+      retryExceptions:
+        - org.springframework.web.client.HttpServerErrorException
+        - java.io.IOException
+  instances:
+    connector:
+      waitDuration: 2s
