@@ -1,0 +1,6 @@
+logging:
+  path: /private/var/log
+  file:
+    max-history: 3
+  level:
+    ROOT: INFO

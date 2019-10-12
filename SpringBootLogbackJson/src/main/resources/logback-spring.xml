@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+	<property name="LOG_FILE" value="/Users/teddy/tmp/spring.log"/>
+
+	<appender name="jsonConsoleAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+		<file>${LOG_FILE}</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd-HH-mm}.%i.log.gz</fileNamePattern>
+			<maxFileSize>1KB</maxFileSize>
+			<maxHistory>2</maxHistory>
+			<totalSizeCap>2GB</totalSizeCap>
+		</rollingPolicy>
+	</appender>
+
+
+	<appender name="classicConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+<!--		<appender-ref ref="classicConsoleAppender"/>-->
+		<appender-ref ref="jsonConsoleAppender"/>
+	</root>
+</configuration>

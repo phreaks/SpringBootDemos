@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: net.frischware.javademo.javademo.SpringBootLogbackJsonApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 241.592 s - in net.frischware.javademo.javademo.SpringBootLogbackJsonApplicationTests
